@@ -60,37 +60,39 @@ if (path[2] === "chat") {
     console.log("your peer id is: " + id);
   });
 
-  videoCall.addEventListener("click", async () => {
+  videoCall.addEventListener("click", () => {
     messages.classList.add("on-call");
     callingDiv.classList.remove("on-call");
     console.log("making a call...");
-    const stream = await navigator.mediaDevices.getUserMedia({
-      audio: true,
-      video: true,
-    });
+    navigator.mediaDevices
+      .getUserMedia({
+        audio: true,
+        video: true,
+      })
+      .then((stream) => {
+        //making a call
+        const call = peer.call(path[3], stream, {
+          metadata: { callerId: peer.id, divCall: callerCreds.innerHTML },
+        });
 
-    //making a call
-    const call = peer.call(path[3], stream, {
-      metadata: { callerId: peer.id, divCall: callerCreds.innerHTML },
-    });
+        //cancelling the call
+        cancelCall.addEventListener("click", () => {
+          call.close();
+          messages.classList.remove("on-call");
+          callingDiv.classList.add("on-call");
+          location.reload();
+        });
 
-    //cancelling the call
-    cancelCall.addEventListener("click", () => {
-      call.close();
-      messages.classList.remove("on-call");
-      callingDiv.classList.add("on-call");
-      location.reload();
-    });
-
-    //listening to answered call
-    const peerVideo = document.createElement("video");
-    call.on("stream", (stream) => {
-      callingDiv.classList.add("on-call");
-      videoGrid.classList.remove("on-call");
-      changeButtons();
-      appendVideo(peerVideo, false, stream);
-      clickButtons(call);
-    });
+        //listening to answered call
+        const peerVideo = document.createElement("video");
+        call.on("stream", (stream) => {
+          callingDiv.classList.add("on-call");
+          videoGrid.classList.remove("on-call");
+          changeButtons();
+          appendVideo(peerVideo, false, stream);
+          clickButtons(call);
+        });
+      });
   });
 
   //incoming call
@@ -108,14 +110,17 @@ if (path[2] === "chat") {
     });
 
     //accept the call
-    acceptBtn.addEventListener("click", async () => {
+    acceptBtn.addEventListener("click", () => {
       incomingCall.classList.add("on-call");
 
-      const myStream = await navigator.mediaDevices.getUserMedia({
-        audio: true,
-        video: true,
-      });
-      call.answer(myStream);
+      navigator.mediaDevices
+        .getUserMedia({
+          audio: true,
+          video: true,
+        })
+        .then((stream) => {
+          call.answer(stream);
+        });
     });
 
     //reject the call

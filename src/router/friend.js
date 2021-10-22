@@ -52,7 +52,7 @@ router.post("/friends/add", ensureAuth, async (req, res) => {
       requestToOrFrom: req.user._id,
     });
     console.log(sentFriend);
-    res.redirect("/friends");
+    res.redirect("/");
   } catch (error) {
     console.log(error);
   }
@@ -103,7 +103,7 @@ router.put("/friends/accept/:id", ensureAuth, async (req, res) => {
   receiver_meta.accepted = true;
   receiver_meta.receivedReq = false;
   await receiver_meta.save();
-  res.redirect("/friends");
+  res.redirect("/");
 });
 
 router.get("/friends/chat/:id", ensureAuth, async (req, res) => {
