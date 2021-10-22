@@ -9,6 +9,8 @@ Usage
 Create a config folder and add dev.env file.
 Add your MONGODB_URL, JWT_SECRET, HOST, MAILPORT, USER and PASS to the dev.env file.
 
+visit http://dhiraj-friendchat.herokuapp.com to see it working on production.
+
 # Install dependencies
 npm install
 
