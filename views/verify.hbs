@@ -1,0 +1,17 @@
+<h3>Verify</h3>
+<div class="divider"></div>
+<div class="section">
+  {{!-- {{#if error}}
+    <p>{{error}}</p>
+  {{/if}}
+  {{#if message.error}}
+    <p>{{message.error}}</p>
+  {{/if}} --}}
+
+  <form action="/verify/{{id}}" method="POST">
+    <input type="text" placeholder="Code" required name="code" />
+    <div class="section">
+      <input type="submit" value="Enter" class="btn red darken-1" />
+    </div>
+  </form>
+</div>

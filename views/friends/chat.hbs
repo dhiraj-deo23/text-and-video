@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col s12 m10 offset-m1">
+    <div class="card">
+      <div class="card-content center-align">
+        <div class="row">
+          <input type="hidden" id="userID" value="{{id}}" />
+          <div class="col m8" id="name-tag">
+            <div class="chip">
+              <img src="data:image/png;base64,{{toString user.avatar}}" />
+              <a href="#">{{user.username}}</a>
+            </div>
+          </div>
+          <div class="col m4" id="call-buttons">
+            <button class="call-icon" id="call"><i
+                class="fa fa-phone"
+              ></i></button>
+            <button class="call-icon" id="video"><i
+                class="fas fa-video"
+              ></i></button>
+            <button class="call-icon on-call" id="back"><i
+                class="fa fa-arrow-circle-left"
+              ></i></button>
+            <button class="call-icon on-call red" id="progressCall"><i
+                class="fas fa-phone-slash"
+              ></i></button>
+          </div>
+        </div>
+        <div class="calling on-call">
+          <div class="callto-content">
+            <img
+              class="callto-image"
+              src="data:image/png;base64,{{toString user.avatar}}"
+            />
+            <p class="red-text">calling {{user.username}}</p>
+            <button class="disconnect"><i
+                class="fas fa-phone-slash"
+              ></i></button>
+          </div>
+        </div>
+        <div class="caller-creds on-call">
+          <p class="red-text">{{name}} calling ..</p>
+          <img
+            class="callto-image"
+            src="data:image/png;base64,{{toString avatar}}"
+          />
+        </div>
+        <div class="incoming-call on-call">
+          <div class="callto-content" id="caller-content">
+          </div>
+          <button id="accept-call">Accept</button>
+          <button id="reject-call" class="red">Reject</button>
+        </div>
+        <div class="video-grid on-call"></div>
+
+        <div class="chat">
+          <div class="chat__main">
+            <div id="messages" class="chat__messages"></div>
+            <div class="compose">
+              <form class="msg-form">
+                <input
+                  type="text"
+                  id="msg-input"
+                  placeholder="message"
+                  required
+                />
+                <button id="btn-msg">send</button>
+              </form>
+              {{! <button id="btn-loc">Send Location</button> }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

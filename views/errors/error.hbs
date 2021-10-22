@@ -1,0 +1,8 @@
+{{#if error}}
+  <h1>{{error.type}} Error</h1>
+  <p>
+    {{error.message}}
+    {{error.type}}
+  </p>
+  <a href="{{error.direct}}" onclick="{{error.click}}" class="btn">BACK</a>
+{{/if}}

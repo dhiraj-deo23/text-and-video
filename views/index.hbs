@@ -1,0 +1,44 @@
+<div class="welcome">
+  <h4 class="welcome-text">Welcome {{name}}</h4>
+  <img src="data:image/png;base64,{{toString avatar}}" class="welcome-image" />
+</div>
+<h4 class="center green red-text">Friends</h4>
+<div class="row">
+  <div class="col s12 m8 offset-m2">
+    <div class="card">
+      <div class="card-content center-align">
+        <div class="row">
+          <input type="hidden" id="userID" value="{{id}}" />
+          {{#each friends}}
+            <div class="col m8">
+              <div class="chip">
+                <img
+                  src="data:image/png;base64,{{toString
+                    requestToOrFrom.avatar
+                  }}"
+                />
+                <a
+                  href="/friends/chat/{{requestToOrFrom._id}}"
+                >{{requestToOrFrom.username}}</a>
+              </div>
+              <input
+                type="hidden"
+                value="{{requestToOrFrom._id}}"
+                id="friend-id"
+              />
+            </div>
+            <div class="col m4">
+              <button class="call-icon red" id="online-icon">offline</button>
+            </div>
+            {{! accepting requests }}
+            {{! <div class="horizontal"></div> }}
+
+          {{else}}
+            <p>No Friends. Add!</p>
+          {{/each}}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h3>Sign Up</h3>
+<div class="divider"></div>
+<div class="section">
+  {{#if status}}
+    <p>{{status}} BAD REQUEST</p>
+  {{/if}}
+  <form action="" method="POST" enctype="multipart/form-data">
+    <input type="text" name="username" placeholder="Username" required />
+    <input type="email" name="email" required placeholder="email" />
+    <input type="password" name="password" required placeholder="password" />
+    <input type="file" name="avatar" />
+    <hr />
+    <p>Password must contain at least one digit and be of length greater than 6</p>
+    <div class="section">
+      <input type="submit" value="Register" class="btn green darken-1" />
+    </div>
+  </form>
+</div>

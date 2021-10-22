@@ -1,0 +1,267 @@
+p {
+  margin: 10px 0 !important;
+}
+
+.login-container {
+  width: 400px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.fa-small {
+  font-size: 16px !important;
+}
+
+.btn-float {
+  float: left;
+  margin-right: 10px;
+}
+
+.img-small {
+  width: 180px;
+}
+
+/* General Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.4;
+  color: #333333;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #777;
+}
+
+input {
+  border: 1px solid #eeeeee;
+  padding: 12px;
+  margin-right: 3px;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  padding: 0 10px;
+  background: #0070cc;
+  border-radius: 2px;
+  color: white;
+  /* font-size: 16px; */
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #6b47b8;
+}
+
+button:disabled {
+  cursor: default;
+  background: #7c5cbf94;
+}
+
+/* Join Page Styles */
+
+.centered-form {
+  background: #333744;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-form__box {
+  box-shadow: 0px 0px 17px 1px #1d1f26;
+  background: #f7f7fa;
+  padding: 24px;
+  width: 250px;
+}
+
+.centered-form button {
+  width: 100%;
+}
+
+.centered-form input {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+/* Message Styles */
+.chat__messages {
+  display: flex;
+  flex-direction: column;
+}
+.message {
+  margin-bottom: 4px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.message__name {
+  font-weight: 600;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.message__meta {
+  color: #777;
+  font-size: 14px;
+}
+
+.message a {
+  color: #0070cc;
+}
+
+/* Message Composition Styles */
+
+.compose {
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 16px;
+  padding: 24px;
+}
+
+.compose form {
+  display: flex;
+  flex-grow: 1;
+  margin-right: 16px;
+}
+
+.compose input {
+  border: 1px solid #eeeeee;
+  width: 100%;
+  padding: 12px;
+  margin: 0 16px 0 0;
+  flex-grow: 1;
+}
+
+/* .compose button {
+  font-size: 14px;
+} */
+
+/* Chat Sidebar Styles */
+
+.room-title {
+  font-weight: 400;
+  font-size: 22px;
+  background: #2c2f3a;
+  padding: 24px;
+  text-transform: capitalize;
+  color: crimson;
+}
+
+.list-title {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 4px;
+  padding: 12px 24px 0 24px;
+}
+
+.users {
+  list-style-type: none;
+  font-weight: 300;
+  padding: 12px 24px 0 24px;
+}
+
+.user {
+  text-transform: capitalize;
+  color: #0070cc;
+}
+
+.horizontal {
+  height: 2px;
+  background-color: red;
+}
+
+.chat-icon {
+  color: royalblue;
+}
+
+.left {
+  text-align: left;
+  background: silver;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.right {
+  text-align: right;
+  background: skyblue;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.call-icon {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.on-call {
+  display: none;
+}
+
+.disconnect {
+  padding: 10px;
+  background: red;
+  color: wheat;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-grid {
+  width: 80%;
+  height: 60%;
+  margin: auto;
+}
+
+.callto-image {
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+}
+
+.welcome {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome-text {
+  border: solid 3px blue;
+  background: skyblue;
+  padding: 1rem;
+  border-radius: 25%;
+}
+
+.welcome-image {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+}
+
+#accept-call,
+#reject-call {
+  margin-top: 12px;
+  padding: 8px;
+}
